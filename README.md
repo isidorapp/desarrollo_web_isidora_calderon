@@ -63,7 +63,3 @@ Se utilizó Chart.js (externo) para visualizar datos:
 * Gráfico de torta para distribución de miembros por tipo.
 * Gráfico de barras para distribución de actividades por tipo.
 
-
-## Autor
-
-[Tu nombre aquí]

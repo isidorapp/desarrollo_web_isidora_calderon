@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400&display=swap');
+
+/* barra superior de navegación */
+.navbar {
+    font-family: 'Mali', cursive;
+    font-weight: 400;
+    background-color: #181818;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #ffd6ea;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    color: #ff85c0;
+    font-weight: 400;
+}
+
+/* header y título */
+header {
+    font-family: 'Mali', cursive;
+    font-weight: 400;
+    background-color: #242424;
+    color: rgb(255, 243, 249);
+    padding: 20px;
+    text-align: center;
+}
+
+/* estilos body y main */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #dc628f;
+    font-weight: 300;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #7b324c;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #383838;
+    color: #242424;
+}
+
+/* parámetros específicos para tab de inicio */
+main-index {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    font-size: large;
+    text-align: center;
+    background: #f1d6e3;
+    border-radius: 8px;
+}
+
+/* main general */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f1d6e3;
+    border-radius: 8px;
+    
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* barras de inputs y selecciones */
+input, select {
+    font-family: 'Mali', cursive;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1.5px solid hsl(331, 49%, 79%);
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: 1.5px solid #560e2d;
+}
+
+/* botones inferiores */
+button {
+    font-family: 'Mali', cursive;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dc628d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #560e2d;
+}
+
+/* mensajes de error */
+.error-msg {
+    color: rgb(255, 0, 85);
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+
+/* listado de miembros */
+.controles-lista {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #560e2d;
+    color: rgb(255, 243, 249);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #d4b8c8;
+}
+
+tbody tr:hover {
+    background-color: rgb(255, 238, 246);
+}
+
+.controles-paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #560e2d;
+}
+
+.controles-paginacion button:disabled {
+    background-color: #d4b8c8;
+    cursor: not-allowed;
+}
+
+/* formulario dinámico de registro de actividades */
+.bloque-actividad {
+    background-color: #fdf5f9;
+    border: 2px dashed #d4b8c8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.bloque-actividad h2 {
+    background-color: #fdf5f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+/* botón para agregar más actividades */
+.btn-secundario {
+    background-color: transparent;
+    color: #dc628d;
+    border: 2px solid #dc628d;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-secundario:hover {
+    background-color: #dc628d;
+    color: white;
+}
+
+.bloque-actividad .grupo-input {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+}

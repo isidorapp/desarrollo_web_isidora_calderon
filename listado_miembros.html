@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Miembros - DCC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="registro_miembro.html">Registro Miembros</a>
+        <a href="registro_actividad.html">Registro Actividades</a>
+        <a href="listado_miembros.html">Listado de Miembros</a>
+        <a href="metricas.html">Estadísticas</a>
+    </nav>
+    <header>
+        <h1>Listado de Miembros</h1>
+        <nav><a href="index.html">Volver al Inicio</a></nav>
+    </header>
+
+    <main>
+        <section class="controles-lista">
+            <label for="filtroTipo">Filtrar por tipo:</label>
+            <select id="filtroTipo">
+                <option value="todos">Todos</option>
+                <option value="estudiante">Estudiantes</option>
+                <option value="funcionario">Funcionarios</option>
+                <option value="academico">Académicos</option>
+            </select>
+
+            <label for="ordenarPor">Ordenar por:</label>
+            <select id="ordenarPor">
+                <option value="nombre_asc">Nombre (A - Z)</option>
+                <option value="nombre_desc">Nombre (Z - A)</option>
+                <option value="correo_asc">Correo (A - Z)</option>
+            </select>
+        </section>
+
+        <section class="tabla-contenedor">
+            <table id="tablaMiembros">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Correo</th>
+                        <th>Tipo</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla">
+                    </tbody>
+            </table>
+        </section>
+
+        <section class="controles-paginacion">
+            <button id="btnAnterior" disabled>Anterior</button>
+            <span id="indicadorPagina">Página 1</span>
+            <button id="btnSiguiente">Siguiente</button>
+        </section>
+    </main>
+
+    <script src="listado.js"></script>
+
+    <footer>
+        <p>Tarea 1 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+
+</html>

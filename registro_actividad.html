@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades - DCC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html">Inicio</a>
+        <a href="registro_miembro.html">Registro Miembros</a>
+        <a href="registro_actividad.html">Registro Actividades</a>
+        <a href="listado_miembros.html">Listado de Miembros</a>
+        <a href="metricas.html">Estadísticas</a>
+    </nav>
+
+    <header>
+        <h1>Informar Actividades de un Miembro</h1>
+        <nav><a href="index.html">Volver al Inicio</a></nav>
+    </header>
+
+    <main>
+        <section>
+            <form id="formRegistroActividad" action="#" method="POST" enctype="multipart/form-data">
+                <p>Los campos marcados con (*) son obligatorios.</p>
+
+                <div id="contenedorActividades">
+
+                    <div class="bloque-actividad">
+                        <h2>Actividad</h2>
+                        
+                        <div class="grupo-input">
+                            <label>Tipo de Actividad (*):</label>
+                            <select class="input-tipo">
+                                <option value="">-- Seleccione una opción --</option>
+                                <option value="artistica">Artística</option>
+                                <option value="deportiva">Deportiva</option>
+                                <option value="tecnologica">Tecnológica</option>
+                                <option value="social">Social</option>
+                                <option value="recreativa">Recreativa</option>
+                            </select>
+                            <span class="error-msg error-tipo"></span>
+                        </div>
+
+                        
+                        <div class="grupo-input">
+                            <label>Días (*):</label>
+                            <div>
+                                <label><input type="checkbox" name="dias" value="Lunes"> Lunes</label>
+                                <label><input type="checkbox" name="dias" value="Martes"> Martes</label>
+                                <label><input type="checkbox" name="dias" value="Miércoles"> Miércoles</label>
+                                <label><input type="checkbox" name="dias" value="Jueves"> Jueves</label>
+                                <label><input type="checkbox" name="dias" value="Viernes"> Viernes</label>
+                                <label><input type="checkbox" name="dias" value="Sábado"> Sábado</label>
+                                <label><input type="checkbox" name="dias" value="Domingo"> Domingo</label>
+                            </div>
+                            <span class="error-msg error-dias"></span>
+                        </div>
+
+                        
+                        <div class="grupo-input">
+                            <label>Hora de inicio (*):</label>
+                            <input type="time" class="horaInicio">
+
+                            <label>Hora de término (*):</label>
+                            <input type="time" class="horaFin">
+
+                            <span class="error-msg error-horario"></span>
+                        </div>
+
+                        
+                        <div class="grupo-input">
+                            <label>Fotos o videos de la actividad (*):</label>
+                            <input type="file" class="input-archivos" accept="image/*,video/*" multiple>
+                            <span class="error-msg error-archivos"></span>
+                        </div>
+                        
+                        <div class="grupo-input">
+                            <label>Enlace (*):</label>
+                            <input type="url" class="input-enlace" placeholder="https://ejemplo.com">
+                            <span class="error-msg error-enlace"></span>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <button type="button" id="btnAgregarActividad" class="btn-secundario">
+                    + Agregar otra actividad
+                </button>
+
+                <button type="submit" id="btnEnviarActividad">
+                    Registrar actividades
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="actividades.js"></script>
+
+    <footer>
+        <p>Tarea 1 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>

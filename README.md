@@ -53,3 +53,7 @@ Se muestran las actividades informadas del miembro, junto con las imágenes que 
 
 - Se tienen dos rutas para index; la ruta con la que se abre la web ('/'), y la ruta cuando se vuelve al inicio ('/index')
 - Se valida en servidor, si hay errores se muestran con flash.
+
+### 8. Validaciones HTML y CSS
+
+- Al usar Flask, la página para validar código html arroja errores, por lo que se utilizó el código fuente de la app corriendo para revisión de errores.

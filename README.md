@@ -48,6 +48,7 @@ Se muestran las actividades informadas del miembro, junto con las imágenes que 
 
 - Se definen las clases Region, Comuna, Miembro, Actividad, y Foto, cada una con sus respectivos campos.
 - Las funciones de get y crear se manejan con session. Para guardado se usan listas vacías y se hace append según corresponda.
+- Se incluye en la carpeta database el archivo datos.sql, que contiene la creación de las tablas miembro, actividad, y foto, con las que quedó configurada la página (obtenida mediante dump structure and data de mysql).
 
 ### 7. App
 

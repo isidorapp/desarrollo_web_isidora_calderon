@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Miembros - DCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro_miembro') }}">Registro Miembros</a>
+        <a href="{{ url_for('registro_actividad') }}">Registro Actividades</a>
+        <a href="{{ url_for('listado_miembros') }}">Listado de Miembros</a>
+        <a href="{{ url_for('metricas') }}">Estadísticas</a>
+    </nav>
+    <header>
+        <h1>Listado de Miembros</h1>
+        <nav><a href="{{ url_for('index') }}">Volver al Inicio</a></nav>
+    </header>
+
+    <main class="main-listado"> 
+        <div class="columna-tabla">
+            <section class="controles-lista">
+                <label for="filtroTipo">Filtrar por tipo:</label>
+                <select id="filtroTipo">
+                    <option value="todos">Todos</option>
+                    <option value="estudiante">Estudiantes</option>
+                    <option value="funcionario">Funcionarios</option>
+                    <option value="academico">Académicos</option>
+                </select>
+
+                <label for="ordenarPor">Ordenar por:</label>
+                <select id="ordenarPor">
+                    <option value="nombre_asc">Nombre (A - Z)</option>
+                    <option value="nombre_desc">Nombre (Z - A)</option>
+                    <option value="correo_asc">Correo (A - Z)</option>
+                </select>
+            </section>
+
+            <section class="tabla-contenedor">
+                <table id="tablaMiembros">
+                    <thead>
+                        <tr class="header-oscuro">
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="cuerpoTabla" class="tabla-listado-body">
+                        </tbody>
+                </table>
+            </section>
+
+            <section class="controles-paginacion paginacion-container">
+                <button id="btnAnterior" disabled>Anterior</button>
+                <span id="indicadorPagina">Página 1</span>
+                <button id="btnSiguiente">Siguiente</button>
+            </section>
+        </div>
+
+        <aside id="detalleMiembro" class="detalle-miembro-panel">
+            <h2>Detalles del Miembro</h2>
+            <p><strong>Nombre:</strong> <span id="detNombre"></span></p>
+            <p><strong>Correo:</strong> <span id="detCorreo"></span></p>
+            <p><strong>Región:</strong> <span id="detRegion"></span></p>
+            <p><strong>Comuna:</strong> <span id="detComuna"></span></p>
+            <p><strong>Fecha de Registro:</strong> <span id="detFecha"></span></p>
+            
+            <h3>Actividades Informadas</h3>
+            <ul id="listaActividades">
+                </ul>
+        </aside>
+    </main>
+
+    <div id="modalGaleria" class="modal-galeria">
+        <span class="modal-cerrar" onclick="cerrarModal()">&times;</span>
+        <img id="imgModal" src="data:," alt="Imagen ampliada" class="modal-contenido">
+    </div>
+
+    <script>
+        // abrir y cerrar foto agrandada
+        const modal = document.getElementById("modalGaleria");
+        const imgModal = document.getElementById("imgModal");
+
+        function abrirModal(srcImagen) {
+            imgModal.src = srcImagen;
+            modal.style.display = "flex";
+        }
+
+        function cerrarModal() {
+            modal.style.display = "none";
+        }
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) cerrarModal();
+        });
+    </script>
+
+    <script src="{{ url_for('static', filename='js/listado.js') }}"></script>
+
+    <footer>
+        <p>Tarea 2 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>

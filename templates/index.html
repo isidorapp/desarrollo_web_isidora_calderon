@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Actividades - DCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro_miembro') }}">Registro Miembros</a>
+        <a href="{{ url_for('registro_actividad') }}">Registro Actividades</a>
+        <a href="{{ url_for('listado_miembros') }}">Listado de Miembros</a>
+        <a href="{{ url_for('metricas') }}">Estadísticas</a>
+    </nav>
+
+    <header>
+        <h1>Sistema de Gestión de Actividades ❤︎ DCC</h1>
+    </header>
+    
+    <main class="main-home">
+        
+        <section class="menu-principal">
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                <div class="mensajes-flash">
+                  {% for category, message in messages %}
+                    <p class="alerta {{ category }}">
+                        {{ message }}
+                    </p>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <h2>¡Bienvenid@! ¿Qué deseas hacer?</h2>
+            
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('registro_miembro') }}">❤︎ Registrar miembro</a></li>
+                    <li><a href="{{ url_for('registro_actividad') }}">❤︎ Informar actividad</a></li>
+                    <li><a href="{{ url_for('listado_miembros') }}">❤︎ Ver lista de miembros</a></li>
+                    <li><a href="{{ url_for('metricas') }}">❤︎ Ver gráficos y estadísticas</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <section class="ultimos-miembros">
+            <h3>❤︎ Últimos 5 miembros agregados ❤︎</h3>
+            
+            {% if ultimos_miembros %}
+                <table class="tabla-home">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Tipo</th>
+                            <th>Fecha Registro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for miembro in ultimos_miembros %}
+                        <tr>
+                            <td>{{ miembro.nombre }}</td>
+                            <td>{{ miembro.email }}</td>
+                            <td class="td-capitalize">{{ miembro.tipo }}</td>
+                            <td>{{ miembro.fecha }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% else %}
+                <p class="error-msg" style="display: block; text-align: center;">Aún no hay miembros registrados en el sistema.</p>
+            {% endif %}
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Tarea 2 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>

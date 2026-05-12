@@ -40,9 +40,9 @@ la hora de inicio de la actividad con tipo tiempo, la duración en minutos (simi
 
 ### 5. Listado de miembros  
 
+- Se cambió el uso de innerhtml por uso de replaceChildren().
 - Se mantiene la paginación de miembros registrados con filtro y ordenamiento.
-- Al presionar un miembro, se despliega un *aside* con los detalles del miembro, incluyendo nombre, correo, región, comuna, y fecha de registro (guardada con datetime).
-Se muestran las actividades informadas del miembro, junto con las imágenes que haya subido. Estas se trabajaron como modales para permitir agrandarlas y cerrarlas.
+- Al presionar un miembro, se despliega un *aside* con los detalles del miembro, incluyendo nombre, correo, región, comuna, y fecha de registro (guardada con datetime). Se muestran las actividades informadas del miembro, junto con las imágenes que haya subido. Estas se trabajaron como modales para permitir agrandarlas y cerrarlas.
 
 ### 6. Base de datos
 

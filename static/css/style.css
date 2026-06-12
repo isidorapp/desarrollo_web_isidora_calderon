@@ -1,0 +1,542 @@
+@import url('https://fonts.googleapis.com/css2?family=Mali:wght@300;400&display=swap');
+
+/* barra superior de navegación */
+.navbar {
+    font-family: 'Mali', cursive;
+    font-weight: 400;
+    background-color: #181818;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.navbar a {
+    color: #ffd6ea;
+    font-weight: 300;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    color: #ff85c0;
+    font-weight: 400;
+}
+
+/* header y título */
+header {
+    font-family: 'Mali', cursive;
+    font-weight: 400;
+    background-color: #242424;
+    color: rgb(255, 243, 249);
+    padding: 20px;
+    text-align: center;
+}
+
+/* estilos body y main */
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #dc628f;
+    font-weight: 300;
+}
+
+nav a:hover {
+    text-decoration: none;
+    color: #7b324c;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Mali', cursive;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+    background-color: #383838;
+    color: #242424;
+}
+
+/* main */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f1d6e3;
+    border-radius: 8px;
+    
+}
+
+/* textareas */
+textarea {
+    font-family: 'Mali', cursive;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1.5px solid hsl(331, 49%, 79%);
+    border-radius: 4px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+/* barras de inputs y selecciones */
+input, select {
+    font-family: 'Mali', cursive;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1.5px solid hsl(331, 49%, 79%);
+    border-radius: 4px;
+}
+
+input:focus {
+    outline: 1.5px solid #560e2d;
+}
+
+/* botones inferiores */
+button {
+    font-family: 'Mali', cursive;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #dc628d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #560e2d;
+}
+
+/* mensajes de error */
+.error-msg {
+    color: rgb(255, 0, 85);
+    font-weight: 500;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+}
+
+
+/* listado de miembros */
+.controles-lista {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+thead {
+    background-color: #560e2d;
+    color: rgb(255, 243, 249);
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #d4b8c8;
+}
+
+tbody tr:hover {
+    background-color: rgb(255, 238, 246);
+}
+
+.controles-paginacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    color: #560e2d;
+}
+
+.controles-paginacion button:disabled {
+    background-color: #d4b8c8;
+    cursor: not-allowed;
+}
+
+/* formulario dinámico de registro de actividades */
+.bloque-actividad {
+    background-color: #fdf5f9;
+    border: 2px dashed #d4b8c8;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.bloque-actividad h2 {
+    background-color: #fdf5f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.btn-secundario {
+    background-color: transparent;
+    color: #dc628d;
+    border: 2px solid #dc628d;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.btn-secundario:hover {
+    background-color: #dc628d;
+    color: white;
+}
+
+.bloque-actividad .grupo-input {
+    margin-bottom: 15px;
+}
+
+footer {
+    text-align: center;
+}
+
+/* específicos index */
+
+/* main index */
+.main-home {
+    background: transparent; 
+    padding: 0; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 30px;
+}
+
+/* bienvenida */
+.menu-principal {
+    background-color: #f1d6e3; 
+    padding: 40px 20px; 
+    border-radius: 8px; 
+    text-align: center; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.menu-principal h2 {
+    margin-top: 0;
+}
+
+/* últimos miembros */
+.ultimos-miembros {
+    background-color: #fdfdfd; 
+    padding: 30px; 
+    border-radius: 8px; 
+    border: 2px dashed #d4b8c8; 
+    width: 100%; 
+    box-sizing: border-box;
+}
+
+.ultimos-miembros h3 {
+    text-align: center; 
+    margin-top: 0; 
+    margin-bottom: 20px; 
+    color: #560e2d;
+}
+
+/* tabla específica */
+.tabla-home {
+    width: 100%; 
+    border-collapse: collapse; 
+    text-align: left; 
+    background-color: white;
+}
+
+.td-capitalize {
+    text-transform: capitalize;
+}
+
+/* mensajes flash */
+.alerta {
+    padding: 10px; 
+    border-radius: 5px; 
+    text-align: center; 
+    font-weight: bold; 
+    margin-bottom: 20px;
+}
+
+.alerta.success {
+    background-color: #d4edda; 
+    color: #155724; 
+    border: 1px solid #c3e6cb;
+}
+
+.alerta.error, .alerta.danger {
+    background-color: #f8d7da; 
+    color: #721c24; 
+    border: 1px solid #f5c6cb;
+}
+
+
+/* extras registro actividades */
+.miembro-selector-container {
+    background-color: #ffd7e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.miembro-selector-container select {
+    width: 100%;
+    padding: 8px;
+}
+
+
+/* espaciado */
+#btnAgregarActividad {
+    margin-bottom: 20px;
+}
+
+.separador-actividad {
+    margin: 20px 0;
+    border: 0;
+    border-top: 1px solid #d4b8c8;
+}
+
+/* etiquetas de error */
+.error-text {
+    display: none; 
+    color: red; 
+    font-size: 0.85em;
+}
+
+/* específicos listado de miembros */
+.main-listado {
+    display: flex; 
+    gap: 20px;
+    max-width: 1000px;
+}
+
+.columna-tabla {
+    flex: 2;
+}
+
+/* panel de detalles lateral */
+.detalle-miembro-panel {
+    flex: 1; 
+    border: 1px solid #d4b8c8; 
+    padding: 15px; 
+    display: none;
+    background-color: #fdf5f9;
+    border-radius: 8px;
+    align-self: flex-start;
+}
+
+.detalle-miembro-panel h3, .detalle-miembro-panel h4 {
+    color: #560e2d;
+    margin-top: 0;
+}
+
+/* modales de galería para agrandar imágenes */
+.modal-galeria {
+    display: none; 
+    position: fixed; 
+    z-index: 9999; 
+    left: 0; 
+    top: 0; 
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.8); 
+    align-items: center; 
+    justify-content: center;
+}
+
+.modal-contenido {
+    max-width: 90%; 
+    max-height: 90%; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+.modal-cerrar {
+    position: absolute; 
+    top: 20px; 
+    right: 40px; 
+    color: white; 
+    font-size: 40px; 
+    font-weight: bold; 
+    cursor: pointer;
+}
+
+/* tabla */
+.tabla-listado-body {
+    cursor: pointer;
+}
+
+.header-oscuro {
+    background-color: #3a1b2a !important;
+}
+
+.paginacion-container {
+    margin-top: 15px;
+}
+
+.seccion-graficos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+    padding: 1.5rem;
+}
+
+.contenedor-grafico {
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+
+.contenedor-grafico-barras {
+    max-width: 700px;
+}
+
+.contenedor-grafico h2 {
+    color: #560e2d;
+    margin-bottom: 1rem;
+}
+
+.btn-comentarios {
+    display: block;
+    margin-top: 6px;
+    background: none;
+    border: 1px solid #dc628d;
+    color: #560e2d;
+    padding: 3px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.82rem;
+}
+
+.btn-comentarios:hover {
+    background-color: #fdf5f8;
+}
+
+#seccionComentarios {
+    margin-top: 1.5rem;
+    border-top: 2px solid #d4b8c8;
+    padding-top: 1rem;
+}
+
+#seccionComentarios h3 {
+    color: #560e2d;
+    margin-bottom: 0.8rem;
+}
+
+.form-comentario {
+    background: #fdf5f8;
+    border: 1px solid #d4b8c8;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
+}
+
+.form-comentario .grupo-input {
+    margin-bottom: 0.8rem;
+}
+
+.form-comentario label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.form-comentario input[type="text"],
+.form-comentario textarea {
+    width: 100%;
+    max-width: 50ch;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid #c0879f;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.form-comentario textarea {
+    resize: vertical;
+}
+
+#btnAgregarComentario {
+    background-color: #560e2d;
+    color: white;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+#btnAgregarComentario:hover {
+    background-color: #dc628d;
+}
+
+/* mensaje de éxito al agregar comentario */
+#mensajeComentario.success {
+    color: #2d6a4f;
+    background: #d8f3dc;
+    border: 1px solid #74c69d;
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+}
+
+/* listado de comentarios */
+.listado-comentarios {
+    margin-top: 0.5rem;
+}
+
+.lista-comentarios {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.item-comentario {
+    border-left: 3px solid #dc628d;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.8rem;
+    background: #fff;
+    border-radius: 0 4px 4px 0;
+}
+
+.comentario-fecha {
+    display: block;
+    font-size: 0.75rem;
+    color: #888;
+    margin-bottom: 0.2rem;
+}
+
+.comentario-nombre {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+    color: #560e2d;
+}
+
+.comentario-texto {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #333;
+}

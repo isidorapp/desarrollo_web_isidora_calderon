@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro Miembros</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro_miembro') }}">Registro Miembros</a>
+        <a href="{{ url_for('registro_actividad') }}">Registro Actividades</a>
+        <a href="{{ url_for('listado_miembros') }}">Listado de Miembros</a>
+        <a href="{{ url_for('metricas') }}">Estadísticas</a>
+    </nav>
+    <header>
+        <h1>Registro</h1>
+        <nav><a href="{{ url_for('index') }}">Volver al Inicio</a></nav>
+    </header>
+
+    <main>
+        <section>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="mensajes-flash">
+                        {% for category, message in messages %}
+                            <p class="alerta {{ category }}">
+                                {{ message }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form id="formRegistroMiembro" action="{{ url_for('registro_miembro') }}" method="POST">
+                <p>Los campos marcados con (*) son obligatorios.</p>
+            
+                <label for="nombre">Nombre Completo (*):</label>
+                <input type="text" id="nombre" name="nombre">
+                <span class="error-msg error-text" id="errorNombre"></span>
+
+                <label for="email">Correo Electrónico (*):</label>
+                <input type="email" id="email" name="email">
+                <span class="error-msg error-text" id="errorEmail"></span>
+
+                <label for="tipoMiembro">Tipo de Miembro (*):</label>
+                <select id="tipoMiembro" name="tipoMiembro">
+                    <option value="">-- Seleccione una opción --</option>
+                    <option value="estudiante">Estudiante de Pre/Postgrado</option>
+                    <option value="funcionario">Funcionario(a)</option>
+                    <option value="academico">Académico(a)</option>
+                </select>
+                <span class="error-msg error-text" id="errorTipo"></span>
+
+                <label for="region">Región (*):</label>
+                <select id="region" name="region">
+                    <option value="">-- Seleccione una opción --</option>
+                    {% for region in regiones %}
+                        <option value="{{ region.id }}">{{ region.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <span class="error-msg error-text" id="errorRegion"></span>
+
+                <label for="comuna">Comuna (*):</label>
+                <select id="comuna" name="comuna" disabled>
+                    <option value="">-- Seleccione una región --</option>
+                </select>
+                <span class="error-msg error-text" id="errorComuna"></span>
+
+                <button type="submit" id="btnEnviar">Registrar Miembro</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/validador.js') }}"></script>
+
+    <footer>
+        <p>Tarea 3 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>

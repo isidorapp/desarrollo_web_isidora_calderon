@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Actividades - DCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro_miembro') }}">Registro Miembros</a>
+        <a href="{{ url_for('registro_actividad') }}">Registro Actividades</a>
+        <a href="{{ url_for('listado_miembros') }}">Listado de Miembros</a>
+        <a href="{{ url_for('metricas') }}">Estadísticas</a>
+    </nav>
+
+    <header>
+        <h1>Informar Actividades de un Miembro</h1>
+        <nav><a href="{{ url_for('index') }}">Volver al Inicio</a></nav>
+    </header>
+
+   <main>
+        <section>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    <div class="mensajes-flash">
+                        {% for category, message in messages %}
+                            <p class="alerta {{ category }}">
+                                {{ message }}
+                            </p>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+
+            <form id="formRegistroActividad" action="{{ url_for('registro_actividad') }}" method="POST" enctype="multipart/form-data">
+                <p>Los campos marcados con (*) son obligatorios.</p>
+
+                <div class="grupo-input miembro-selector-container">
+                    <label><strong>Seleccione el Miembro (*):</strong></label>
+                    <select name="miembro_id" required>
+                        <option value="">-- Seleccione un miembro --</option>
+                        {% for miembro in miembros %}
+                            <option value="{{ miembro.id }}">{{ miembro.nombre }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div id="contenedorActividades">
+                    <div class="bloque-actividad">
+                        <h2>Detalles de la Actividad</h2>
+                    
+                        <div class="grupo-input">
+                            <label>Nombre de la Actividad (*):</label>
+                            <input type="text" name="nombre" placeholder="Ej: Taller de Pintura" maxlength="45">
+                            <span class="error-msg error-nombre error-text"></span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label>Tipo de Actividad (*):</label>
+                            <select name="tipo" class="input-tipo">
+                                <option value="">-- Seleccione una opción --</option>
+                              <option value="arte">Artística (Arte)</option>
+                                <option value="deporte">Deportiva (Deporte)</option>
+                                <option value="tecnología">Tecnológica</option>
+                                <option value="social">Social</option>
+                                <option value="recreación">Recreativa</option>
+                                <option value="otra">Otra</option>
+                            </select>
+                            <span class="error-msg error-tipo error-text"></span>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label>Día (*):</label>
+                            <select name="dia">
+                                <option value="">-- Seleccione un día --</option>
+                                <option value="lunes">Lunes</option>
+                                <option value="martes">Martes</option>
+                                <option value="miércoles">Miércoles</option>
+                                <option value="jueves">Jueves</option>
+                                <option value="viernes">Viernes</option>
+                                <option value="sábado">Sábado</option>
+                                <option value="domingo">Domingo</option>
+                            </select>
+                            <span class="error-msg error-dia error-text"></span>
+                       </div>
+
+                        <div class="grupo-input">
+                            <label>Hora de inicio (*):</label>
+                            <input type="time" name="hora_inicio" class="horaInicio">
+                            <span class="error-msg error-hora error-text"></span>
+
+                            <label>Duración (minutos) (*):</label>
+                            <input type="number" name="duracion" placeholder="Ej: 90" min="1" max="1440">
+                            <span class="error-msg error-duracion error-text"></span>
+                        </div>
+                    
+                        <div class="grupo-input">
+                            <label>Descripción:</label>
+                            <textarea name="descripcion" rows="3" placeholder="(Opcional) Cuéntanos sobre la actividad..."></textarea>
+                        </div>
+
+                        <div class="grupo-input">
+                            <label>Fotos o videos de la actividad (*):</label>
+                            <input type="file" name="fotos" class="input-archivos" accept="image/*,video/*" multiple>
+                            <span class="error-msg error-fotos error-text"></span>
+                        </div>
+                        <hr class="separador-actividad">
+                    </div>
+                </div>
+
+                <button type="button" id="btnAgregarActividad" class="btn-secundario">
+                    + Agregar otra actividad
+                </button>
+                <br>
+
+                <button type="submit" id="btnEnviarActividad">
+                    Registrar actividades
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='js/actividades.js') }}"></script>
+
+    <footer>
+        <p>Tarea 3 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>

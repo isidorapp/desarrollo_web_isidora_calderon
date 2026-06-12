@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadísticas - DCC</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('registro_miembro') }}">Registro Miembros</a>
+        <a href="{{ url_for('registro_actividad') }}">Registro Actividades</a>
+        <a href="{{ url_for('listado_miembros') }}">Listado de Miembros</a>
+        <a href="{{ url_for('metricas') }}">Estadísticas</a>
+    </nav>
+
+    <header>
+        <h1>Estadísticas de la Comunidad</h1>
+        <nav><a href="{{ url_for('index') }}">Volver al Inicio</a></nav>
+    </header>
+
+    <main>
+        <section class="seccion-graficos">
+
+            <div class="contenedor-grafico">
+                <h2>Miembros Registrados por Día</h2>
+                <canvas id="graficoMiembrosPorDia"></canvas>
+                <p id="errorMiembrosDia" class="error-msg" style="display:none;">No se pudieron cargar los datos.</p>
+            </div>
+
+            <div class="contenedor-grafico">
+                <h2>Actividades por Tipo</h2>
+                <canvas id="graficoActividadesPorTipo"></canvas>
+                <p id="errorActTipo" class="error-msg" style="display:none;">No se pudieron cargar los datos.</p>
+            </div>
+
+            <div class="contenedor-grafico contenedor-grafico-barras">
+                <h2>Actividades por Comuna</h2>
+                <canvas id="graficoActividadesPorComuna"></canvas>
+                <p id="errorActComuna" class="error-msg" style="display:none;">No se pudieron cargar los datos.</p>
+            </div>
+
+        </section>
+
+        
+    </main>
+
+    <script src="{{ url_for('static', filename='js/metricas.js') }}"></script>
+
+    <footer>
+        <p>Tarea 3 - CC5002 ❤︎ 2026-1</p>
+    </footer>
+</body>
+</html>
